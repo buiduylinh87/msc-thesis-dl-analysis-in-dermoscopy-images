@@ -1,0 +1,142 @@
+\newenvironment{multilinetable}
+  {%
+    \begin{footnotesize}
+        \begin{tabular}
+            {p{3cm} >{\itshape} p{3.5cm} @{\hskip 1in}  p{3cm} >{\itshape} p{3.5cm}}%
+  }
+  {%
+        \end{tabular}%
+    \end{footnotesize}
+  }
+
+\newcommand{\sidebysidetwo}[6]{
+    \begin{figure}
+        \centering
+        \begin{minipage}[b]{0.31\textwidth}
+            \includegraphics[width=\textwidth]{#1}
+            \subcaption{#2}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.31\textwidth}
+            \includegraphics[width=\textwidth]{#3}
+            \subcaption{#4}
+        \end{minipage}
+        \caption{#5}
+        \label{#6}
+    \end{figure}
+}
+
+\newcommand{\sidebyside}[8]{
+    \begin{figure}
+        \centering
+        \begin{minipage}[b]{0.31\textwidth}
+            \includegraphics[width=\textwidth]{#1}
+            \subcaption{#2}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.31\textwidth}
+            \includegraphics[width=\textwidth]{#3}
+            \subcaption{#4}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.31\textwidth}
+            \includegraphics[width=\textwidth]{#5}
+            \subcaption{#6}
+        \end{minipage}
+        \caption{#7}
+        \label{#8}
+    \end{figure}
+}
+
+\newlength\myindent
+\setlength\myindent{6em}
+\newcommand\bindent{%
+  \begingroup
+  \setlength{\itemindent}{\myindent}
+  \addtolength{\algorithmicindent}{\myindent}
+}
+\newcommand\eindent{\endgroup}
+%
+%
+\newcommand{\figurenoisy}[3]{
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={Gaussian noise(\%)},
+                ylabel=Dice coefficient,
+                ymin=0.6, ymax=0.9,
+                ]
+              \addplot table [col sep=comma] {#1};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{#2}
+        \label{#3}
+    \end{figure}
+}
+
+\newcommand{\figureallnoises}[3]{
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={Number of epoch},
+                ylabel=Dice coefficient,
+                ymin=0.1, ymax1,
+                legend pos=south east,
+                legend entries={Noise-Free, 10\%, 20\%, 30\%, 40\%, 50\%},
+                legend style={nodes={scale=0.7, transform shape}}
+                ]
+              \addplot+[smooth, mark options={scale=0.1}] table [x=epoch,y=0] {#1};
+              \addplot+[smooth, mark options={scale=0.1}] table [x=epoch,y=10] {#1};
+              \addplot+[smooth, mark options={scale=0.1}] table [x=epoch,y=20] {#1};
+              \addplot+[smooth, mark options={scale=0.1}] table [x=epoch,y=30] {#1};
+              \addplot+[smooth, mark options={scale=0.1}] table [x=epoch,y=40] {#1};
+              \addplot+[smooth, mark options={scale=0.1}] table [x=epoch,y=50] {#1};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{#2}
+        \label{#3}
+    \end{figure}
+}
+
+\newcommand{\figureavgnoises}[3]{
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={Gaussian noise(\%)},
+                ylabel=Dice coefficient,
+                ymax=0.85,
+                legend pos=north east,
+                legend entries={SegAN, MultiResUNet},
+                legend style={nodes={scale=0.7, transform shape}}
+                ]
+              \addplot+[smooth, mark options={scale=0.1}] table [x=noise,y=dice_segan, col sep=comma] {#1};
+              \addplot+[smooth, mark options={scale=0.1}] table [x=noise,y=dice_multiresunet, col sep=comma] {#1};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{#2}
+        \label{#3}
+    \end{figure}
+}
+
+\newcommand{\figuretolerancenoises}[3]{
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={Gaussian noise(\%)},
+                ylabel={Change(\%)},
+                legend pos=north east,
+                legend entries={Change in SegAN, Change in MultiResUNet},
+                legend style={nodes={scale=0.6, transform shape}}
+                ]
+              \addplot+[smooth, mark options={scale=0.4}] table [x=noise,y=tolerance_segan, col sep=comma] {#1};
+              \addplot+[smooth, mark options={scale=0.4}] table [x=noise,y=tolerance_multiresunet, col sep=comma] {#1};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{#2}
+        \label{#3}
+    \end{figure}
+}

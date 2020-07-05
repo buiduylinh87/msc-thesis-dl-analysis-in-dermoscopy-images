@@ -1,0 +1,60 @@
+\section{Experiments}
+
+    Our study is composed of three steps; preprocessing, implementations of networks, and evaluation.
+    During the preprocessing, image normalization procedures have been applied to data explained in Section~\ref{sec:dataset};
+    the image resizing and the conversion of file formats.
+    Moreover, data size has been augmented by creating additional images files in different noise levels.
+    Because our main focus is comparing the proposed network under the same conditions,
+    the preprocessing stages were kept the same for a fair comparison of both MultiResUNet and SegAN.
+
+    Hyperparameters of training proses are explained below while the compared networks are explained in details in Section~\ref{sec:networks}.
+
+    \begin{itemize}
+
+        \item \textbf{Batch size} refers to the number of samples utilized in one iteration before updating the model parameters.
+        It looks like an iteration where the error rate is calculated at the end of the iteration by comparing the batch predictions with ground truth.
+        The calculated error is used to update model parameters.
+
+        \item \textbf{Epoch} is an hyperparameters shows the number of passes of the algorithm through the entire training data.
+        It depends on several criteria such as problem definition and data distribution and can changed from hundreds to thousands
+        until the error rate of the learning algorithm reduced by a certain level.
+
+        \item \textbf{Learning rate} determines how much an update step affects the current value of the model weights.
+        In other words, it is used to decide how quickly the model will forget what it has already learned.
+
+        \item \textbf{Optimizer}s try to minimize the loss function with the help of them by updating the model parameters.
+
+    \end{itemize}
+
+    We trained the MultiResUnet for $200$ epochs with a batch size of $8$ and binary cross entropy loss function.
+    Because we noticed that model success did not improve after that, we select \emph{200} as the number of epochs.
+    Adam is used as optimizer with the default parameters stated in the original paper.
+
+    We trained the SegAN for $200$ epochs with a batch size of $200$ and an adaptive learning rate for Adam optimizer
+    which starts from $2.0 x 10^{-4}$ and multiplies by a decay rate of $0.5$ every $25$ epochs.
+    Several learning and decay rates have been tried but the mentioned ones in the original paper gave the best results.
+
+    We used early stopping for the both networks.
+    If the performances of models stop improving after a certain number of epochs, $30$ is selected for this project, we have stopped the training.
+
+    We have increased the number of experiments by giving additive noise into initial dataset.
+    Five different noise levels except to noise free have been tested using Gaussian noise given as it follows through the
+    initial image $I_i$;
+
+    \begin{equation}
+        I_{final} = I_i + I_n \label{noisy_common}
+    \end{equation}
+
+    $I_{final}$ and $I_{n}$ in Equation \eqref{noisy_common} are the noisy image and Gaussian noise, respectively.
+
+    The Gaussian noise is defined in the Equation  \eqref{noise_gaussian}.
+
+    \begin{equation}
+        p_G(z) = \frac{1}{\sigma\sqrt{2\pi}} e^{ -\frac{(z-\mu)^2}{2\sigma^2} }  \label{noise_gaussian}
+    \end{equation}
+
+    $p_G(z)$ denotes the noise distribution in single channel image.
+    Our images have been encoded in RGB channels. Therefore, the noise has been applied for the all three channels.
+
+    $\mu$ and $\sigma$ represents the mean value and the standard deviation, respectively.
+    We used $5$ noise levels for the experiments with different $\sigma$ values from 0 to 50 by 10.

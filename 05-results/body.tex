@@ -1,0 +1,79 @@
+\chapter{Results}
+
+    Experiments show that the both SegAN and MultiResUNet achieved almost the same dice coefficient result for the noise free images.
+    MultiResUNet is slightly more successful than SegAN if they compared with Jaccard coefficient.
+    The detailed results are given in the Table ~\ref{all-metrics-all-noises-segan} and Table ~\ref{all-metrics-all-noises-multiresunet} through statistical metrics.
+    As can be seen from these tables, although the dice results of the models are very close for the noiseless datasets, the dice results differ as the noise level increases.
+
+    The both models achieved their best results in about epoch of 50. The results are almost the same after that point.
+    Figure ~\ref{fig:all-noises-by-epoch-dice-multiresunet} and Figure ~\ref{fig:all-noises-by-epoch-dice-segan} are point out the dice results of models at different epochs.
+
+%    \sidebyside
+%        {05-results/figures/segan/avg/ISIC_0012330.jpg}{Original image}
+%        {05-results/figures/segan/avg/ISIC_0012330.png}{Ground truth}
+%        {05-results/figures/segan/avg/ISIC_0012330_dice_8288.png}{Result(dice=0.82)}
+%        {SegAN result with average score at 0\% of Gaussian noise}{fig:segan-avg-dice}
+
+    \sidebyside
+        {05-results/figures/segan/bad/ISIC_0012136.jpg}{Original image}
+        {05-results/figures/segan/bad/ISIC_0012136.png}{Ground truth}
+        {05-results/figures/segan/bad/ISIC_0012136_dice_5015.png}{Result(dice=0.50)}
+        {SegAN result with low success compared to average at 0\% of Gaussian noise}{fig:segan-bad-dice}
+
+    \sidebyside
+        {05-results/figures/segan/good/ISIC_0012152.jpg}{Original image}
+        {05-results/figures/segan/good/ISIC_0012152.png}{Ground truth}
+        {05-results/figures/segan/good/ISIC_0012152_dice_9112.png}{Result(dice=0.91)}
+        {SegAN result with high success compared to average at 0\% of Gaussian noise}{fig:segan-good-dice}
+
+    \input{05-results/figures/all-noises-by-epoch-dice-segan}
+
+%    \sidebyside
+%        {05-results/figures/multiresunet/avg/ISIC_0012152.jpg}{Original image}
+%        {05-results/figures/multiresunet/avg/ISIC_0012152.png}{Ground truth}
+%        {05-results/figures/multiresunet/avg/ISIC_0012152_dice_8048.jpg}{Result(dice=0.80)}
+%        {MultiResUNet result with average score at 0\% of Gaussian noise}{fig:multiresunet-avg-dice}
+
+    \sidebyside
+        {05-results/figures/multiresunet/bad/ISIC_0012356.jpg}{Original image}
+        {05-results/figures/multiresunet/bad/ISIC_0012356.png}{Ground truth}
+        {05-results/figures/multiresunet/bad/ISIC_0012356_dice_543.jpg}{Result(dice=0.54)}
+        {MultiResUNet result with low success compared to average at 0\% of Gaussian noise}{fig:multiresunet-bad-dice}
+
+    \sidebyside
+        {05-results/figures/multiresunet/good/ISIC_0012092.jpg}{Original image}
+        {05-results/figures/multiresunet/good/ISIC_0012092.png}{Ground truth}
+        {05-results/figures/multiresunet/good/ISIC_0012092_dice_904.jpg}{Result(dice=0.90)}
+        {MultiResUNet result with high success compared to average at 0\% of Gaussian noise}{fig:multiresunet-good-dice}
+
+    When the noise level is 50\%, the dice results of MultiResUNet's decreased up to 28\%, while the SegAN's decreased up to 53\%.
+    As it explained in Section ~\ref{sec:multiresunet}, SegAN introduces fake skin lesions during the generator level and the discriminator takes a decision after the training if test image is a lesion.
+    The noise added during the training phase of SegAN makes the model more successful againist noisy data.
+
+    Figure ~\ref{fig:comparision-of-models-for-noise-tolerance} shows the change of success of the models against noise.
+    As can be seen here, SegAN is more robust than MultiResUNet at increased levels of Gaussian noises.
+
+
+    \input{05-results/figures/all-noises-by-epoch-dice-multiresunet}
+
+    \input{05-results/tables/all-metrics-all-noises-segan}
+
+    \input{05-results/tables/all-metrics-all-noises-multiresunet}
+
+    \input{05-results/figures/comparision-of-results-of-models-at-different-noise-levels.tex}
+
+    \input{05-results/figures/comparision-of-models-for-noise-tolerance.tex}
+
+    \input{05-results/figures/extended_results_sample_gan_over_unet}
+
+    \input{05-results/figures/extended_results_sample_unet_over_gan}
+
+
+
+    Although it is not possible to create a model that fit all dataset, it is the main objective to present a model that best generalizes them
+    Figures ~\ref{fig:all-noises-with-results-dice-segan-over-multiresunet} and Figure ~\ref{fig:all-noises-with-results-dice-multiresunet-over-segan}
+    are the outputs obtained by evaluating 2 pictures with two models in different levels of noises.
+    While SegAN give more successful results for the image in Figure ~\ref{fig:all-noises-with-results-dice-segan-over-multiresunet},
+    MultiResUNet is more successful in the image of Figure ~\ref{fig:all-noises-with-results-dice-multiresunet-over-segan}.
+    As can be seen from that comparision, there is no precise superiority of the models to each other for certain data.
+

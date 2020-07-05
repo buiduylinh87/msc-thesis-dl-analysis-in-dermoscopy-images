@@ -1,0 +1,98 @@
+% Document Configs, institutional stuff e.g. department
+\input{99-util/document-config}
+% End of Document Configs
+%
+% Latex Packages
+\input{99-util/imports}
+% End of Latex Packages
+%
+% Any personal Latex definition, declaration, etc.
+\input{99-util/personal-definition-stuff}
+% End of personal stuff
+
+% Personal Information
+% ----------------------------
+%
+% Please check this part and fill in information about your thesis
+%
+% Name and Surname
+\author{Fatİh Ergİn}
+% Thesis Title English and Turkish
+\title{Deep Learning Analysis in Dermoscopy Images}
+\trtitle{Dermoskopİ GÖrÜntÜlerİnde Derİn ÖĞrenme Analİzİ}
+% Department : English and Turkish
+%
+% The departments are pre-defined, you need not redeclare them.
+% Date : You should indicate the month of your thesis defence in English.
+% Default is this month
+%
+\date{June 2020}
+%
+% Approval Page Details
+% --------------------------
+% For each command you can give the title as optional parameter enclosed in [ ]
+%For white covered thesis, please comment out approval page in cls file.
+%Committee members number:
+%-------------------
+\input{00-init/committee-members}
+%
+% Abstract
+\input{00-init/abstract}
+%
+% Acknowledgements
+\input{00-init/acknowledgments}
+%
+\input{99-util/environments}
+%
+% End of Personal and Introductory Information
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\jot}{20pt}
+%%% !!! This two should be last lines before \begin{document}, do no move them !!!
+\usepackage[pdftex]{hyperref}
+\usepackage[all]{hypcap}
+\begin{document}
+\addtolength{\textheight}{1.5cm}
+% Preliminaries
+\newlength\myindent
+\setlength\myindent{6em}
+\newcommand\bindent{%
+  \begingroup
+  \setlength{\itemindent}{\myindent}
+  \addtolength{\algorithmicindent}{\myindent}
+}
+\newcommand\eindent{\endgroup}
+
+\input{00-init/preliminaries}
+%
+% Latex content Goes Here
+%
+%
+\input{99-util/theorems}
+%
+% Chapters Start
+%
+\input{01-introduction/body}
+%
+\input{02-related-works/body}
+%
+\input{03-neural-networks-in-tumor-detection/body}
+%
+\input{04-methodology/body}
+%
+\input{05-results/body}
+%
+\input{06-discussion/body}
+%
+\input{07-conclusion/body}
+%
+% End of Chapters
+%
+
+\input{99-util/bibliography}
+
+\input{99-util/appendix}
+
+\input{00-init/vita}
+
+\end{document}

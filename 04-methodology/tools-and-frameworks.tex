@@ -1,0 +1,53 @@
+\section{Tools and Frameworks}
+
+    This section presents tools used for development and testing during the thesis. Python is selected as the main programming language for this thesis.
+
+    \subsection{Tools}
+
+        \paragraph{Numpy (Numerical Python)} is a scientific computing library for the Python that allows us
+            to perform scientific calculations quickly \cite{oliphant2006guide}. Numpy arrays form the basis of Numpy.
+            Numpy arrays are similar to python lists, but are more useful in terms of speed and functionality than python lists.
+
+        \paragraph{Scipy} is a package for scientific computing which includes functionality several clustering algorithms,
+            Fourier transforms, linear algebra, interpolation, regression, image and signal processing for the Python programming language \cite{virtanen2020scipy}.
+
+        \paragraph{Python Imaging Library (PIL)} is a free Python library which supports several widely-used image manipulation procedures
+            like per-pixed manipulating, image filtering, image enhancing, masking etc \cite{anjal2019roi}.
+
+        \paragraph{ImageMagick} is a open-source, free image editing tool that makes many morphological operation easy
+            for more than 200 image format with its built-in features like resize, flip, transform, or special filters \cite{ImageMag68online}.
+            It runs on multiple thread to increase performance and supports command-line usage that makes image editing possible for scripting languages.
+
+        \paragraph{Jupyter Notebook} is an open source web application that allows editing and running code
+            which can be used with over 40 different programming languages \cite{kluyver2016jupyter}.
+            It is a Json based document that has ordered cells which can be live code, equations, visualizations or narrative text.
+
+    \subsection{Deep Learning Frameworks}
+
+        \paragraph{TensorFlow} is an open source library for performing numerical computations. Although it can be used for computations in general,
+            it is most commonly used as a tool for machine learning research.
+            TensorFlow can be interfaced using Python and is then translated to a computational graph \cite{abadi2015tensorflow}.
+            The computational graph can be fed with the tensors  by launching a TensorFlow session which are generalization of N-dimensional arrays.
+            Weight matrices and biases are trainable variables in the TensorFlow graph during a session.
+            Loss functions and optimization algorithms for backpropagation exist in TensorFlow \cite{johansen2019medical}.
+            That makes training a model is as simple as specifying an objective function to optimize for, as well as running the optimizer with a batch of data inside a session.
+
+        \paragraph{Keras} is a neural networks API for Python \cite{chollet2015}. It runs on top of TensorFlow or Theano \cite{mohan2019medical}
+            which is used as the main neural network framework. Keras is user-friendly and allows for complex models to be created with relatively few lines of code.
+            Keras consists of many commonly used building blocks of neural networks. These are parts as layers, objectives, activation functions and optimizers.
+            The components include parts for convolutional and recurrent neural networks as convolutions, pooling, dropout and batch normalization.
+
+        \paragraph{PyTorch} is a machine learning framework introduced by Facebook which has relatively advantages over TensorFlow
+            in terms of simplicity and usability. It implements dynamic computational graphs which makes dynamic changes
+            on the networks possible with a little effort. Debugging is relatively easy with Pytorch.
+
+
+    \subsection{Hardware Requirements}
+
+        \paragraph{Google Colab} which is also known as Colaboratory that requires no setup and runs entirely in the cloud is used in this thesis.
+            Colab is a Jupyter Notebook environment aims to support Machine Learning and Artificial Intelligence researches for free,
+            because this kind of process requires serious computational power.
+            Many deep learning projects can be developed with Google Colaboratory on the default GPU processor of it, Tesla K80, using common Deep Learning frameworks and tools like Keras,
+            TensorFlow and PyTorch. Google Colab runs on a connected Google Drive accounts.
+            All models were trained and tested using Tesla K80 GPU which has 25 GB of video memory on a Ubuntu 18.04.
+

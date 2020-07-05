@@ -1,0 +1,11 @@
+\makeatletter
+\let\old@includegraphics\includegraphics
+\renewcommand{\includegraphics}[2][,]{%
+  \setbox9=\hbox{\old@includegraphics[#1]{#2}}%
+  \ifdim\wd9>\textwidth
+    \old@includegraphics[#1,width=\textwidth]{#2}%
+  \else
+    \old@includegraphics[#1]{#2}%
+  \fi%
+}
+\makeatother

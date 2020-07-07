@@ -25,10 +25,10 @@
     - [x] [~~Experiments~~](04-methodology/experiments.tex)
     - [x] [~~Evaluation~~](04-methodology/evaluation.tex)
 
-- [x] [Results (In Progress)](05-results/body.tex)
+- [x] [~~Results~~](05-results/body.tex)
 
 - [x] [~~Discussion~~](06-discussion/body.tex)
 
 - [x] [~~Conclusion~~](07-conclusion/body.tex)
 
-- [ ] [Curriculum Vitae](00-init/vita.tex)
+- [x] [~~Curriculum Vitae~~](00-init/vita.tex)

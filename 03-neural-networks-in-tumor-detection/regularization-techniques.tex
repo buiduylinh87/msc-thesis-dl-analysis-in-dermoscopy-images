@@ -1,6 +1,8 @@
 \section{Regularization Techniques}
 
-    \subsection{Data Augmentation}
+\begin{itemize}
+
+	\item \textbf{Data Augmentation}
 
         Data augmentation is artificially boosting the diversity and number of training examples by performing random transformations to existing images to create a set of new variants without altering the meaning of the data.
         Flipping, rotating, adding noise are the some of the commonly used data augmentation techniques.
@@ -8,7 +10,7 @@
         Data augmentation is used to prevent overfitting and especially useful when the training dataset is relatively small.
         While some augmentation increases the robustness of the algorithm, irrelevant transformations might make the task hard to learn, and adding new data to the training set will increase the model complexity and reqiured time to build the model.
 
-    \subsection{Dropout}
+	\item \textbf{Dropout}
 
         Overfitting is a common problem which is not limited only deep neural networks but includes the different disciplines such as several supervised and unsupervised methods in machine learning.
         Neural networks can be used to create relation between their input and output to predict the newly added input with acceptible result.
@@ -29,7 +31,7 @@
         The amount of exclusion is regulated by the dropout rate.
         Figure~\ref{fig:dropout} shows a regular neural network (a) and a thinned network by applying dropout (b).
 
-    \subsection{Weight Decay}
+	\item \textbf{Weight Decay}
 
         Weight decay is another technique used to prevent overfitting by adding a regularization term such as L1 or L2 to the loss function.
         L1 regularization is the sum of the absolute value of the weights and produces sparse weight matrices while L2 regularization is the sum of the squares of all the feature weights and make the calculation more computationally efficient.
@@ -38,7 +40,7 @@
 
         In L2 regularization, model complexity is dramatically affected by the outlier weights.
 
-    \subsection{Early Stopping}
+	\item \textbf{Early Stopping}
 
         Early stopping is a technique to reduce overfitting using the some part of the training data as a validation set.
         Training process does not include this data.
@@ -47,3 +49,6 @@
 
         A significant point of eary stopping is selection of the validation set.
         It should represent the all data. It can be understood how well the model is generalizing beyond the training data.
+
+\end{itemize}
+

@@ -9,23 +9,28 @@
 
     A CNN mainly consist of different types of layers as it can be seen in Figure~\ref{fig:sample-cnn-architecture-skin-lesion-classification} including input, convolutional, non-linearity, pooling, and fully connected layers.
 
-    \paragraph{Input layer} contains input images as a matrix of the raw pixel values.
+    \begin{itemize}
 
-    \paragraph{Convolutional layer} is used to extract features of the input data.
-        Each neuron has a local receptive field which means it is not fully connected, but connected to some section of the input to provide abstractions of small sections of the input data.
-        Convolution layers calculate a dot product between the receptive field and the filter by performing convolution.
-        The result of this convolution is a single integer which will be used as the input of the next layer.
+        \item \textbf{Input layer} contains input images as a matrix of the raw pixel values.
 
-        \input{03-neural-networks-in-tumor-detection/figures/cnn-convolutional-layer}
+        \item \textbf{Convolutional layer} is used to extract features of the input data.
+            Each neuron has a local receptive field which means it is not fully connected, but connected to some section of the input to provide abstractions of small sections of the input data.
+            Convolution layers calculate a dot product between the receptive field and the filter by performing convolution.
+            The result of this convolution is a single integer which will be used as the input of the next layer.
 
-        The filter is slided over the next receptive fields of the input image repeatedly until there is no unconvolved receptive field left.
+            \input{03-neural-networks-in-tumor-detection/figures/cnn-convolutional-layer}
 
-    \paragraph{Non-linearity layer} consists of an activation function, which applies an elementwise activation by thresholding at zero, creates and activation map with taking the output of the convolutional layer in CNNs.
+            The filter is slided over the next receptive fields of the input image repeatedly until there is no unconvolved receptive field left.
 
-    \paragraph{Pooling layer} apply a spatial downsampling along the output volume.
-        Pooling layers are commony used to reduce the computational requirements of the neural networks progressively and minimize the overfitting \cite{Layersof6online}.
+        \item \textbf{Non-linearity layer} consists of an activation function, which applies an elementwise activation by thresholding at zero, creates and activation map with taking the output of the convolutional layer in CNNs.
 
-    \paragraph{Fully connected layer} mainly computes the class scores based on the training dataset.
-        They connect the neurons in layers to each other.
-        The last fully connected layer classifies the generated features with the help of an activation function.
+        \item \textbf{Pooling layer} apply a spatial downsampling along the output volume.
+            Pooling layers are commony used to reduce the computational requirements of the neural networks progressively and minimize the overfitting \cite{Layersof6online}.
+
+        \item \textbf{Fully connected layer} mainly computes the class scores based on the training dataset.
+            They connect the neurons in layers to each other.
+            The last fully connected layer classifies the generated features with the help of an activation function.
+
+    \end{itemize}
+
 

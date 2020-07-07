@@ -1,4 +1,4 @@
-\section{Evaluation}
+\section{Evaluation Metrics}
 
     Several evaluation metrics were used to determine the quality of the models.
     Dice coefficient, Jaccard index, Accuracy, Sensitivity and Specificity  were used to compare the target and predicted segmentation mask.
@@ -6,38 +6,41 @@
     a false positive (FP) is a pixel incorrectly classified as being part of the segmentation, and a false negative (FN)
     is a pixel which should have been part of the segmentation but was not.
 
-    \subsection{Metrics}
+    \begin{itemize}
 
-        \paragraph{Dice coefficient} which is also known as similarity coefficient or F1 score is a similarity metrics
-            computed by comparing the pixel-wise agreement between the groundtruth and its predicted segmentation.
-            Specially, this metric is just used to evaluate the segmentation performance of the model.
+        \item \textbf{Dice coefficient} which is also known as similarity coefficient or F1 score is a similarity metrics
+                computed by comparing the pixel-wise agreement between the groundtruth and its predicted segmentation.
+                Specially, this metric is just used to evaluate the segmentation performance of the model.
 
-            \begin{equation}
-                Dice &= \frac{2 * TP}{2 * TP + FN + FP} \\
-            \end{equation}
+                \begin{equation}
+                    Dice &= \frac{2 * TP}{2 * TP + FN + FP} \\
+                \end{equation}
 
-        \paragraph{Jaccard index,} also known as the Jaccard similarity coefficient, is a similarity metrics
-            which compares predictions with the ground truths by dividing the size of the intersections by size of the unions.
+        \item \textbf{Jaccard index} also known as the Jaccard similarity coefficient, is a similarity metrics
+                which compares predictions with the ground truths by dividing the size of the intersections by size of the unions.
 
-            \begin{equation}
-                Jaccard &= \frac{TP}{TP + FN + FP} \\
-            \end{equation}
+                \begin{equation}
+                    Jaccard &= \frac{TP}{TP + FN + FP} \\
+                \end{equation}
 
-        \paragraph{Accuracy} measures the proportion of true positives and true negatives whose are correctly segmented instances
-            to the total number of instances. It is derived from sensitivity and specificity which are given below.
+        \item \textbf{Accuracy} measures the proportion of true positives and true negatives whose are correctly segmented instances
+                to the total number of instances. It is derived from sensitivity and specificity which are given below.
 
-            \begin{equation}
-                Accuracy &= \frac{TP + TN}{TP + FP + TN + FN} \\
-            \end{equation}
+                \begin{equation}
+                    Accuracy &= \frac{TP + TN}{TP + FP + TN + FN} \\
+                \end{equation}
 
-        \paragraph{Sensitivity and Specificity} are the other metrics used in this project. Sensitivity aims to measure
-        correctly segmented instance ratio while specificity measures incorrectly segmented instance ratio.
+        \item \textbf{Sensitivity and Specificity} are the other metrics used in this project. Sensitivity aims to measure
+            correctly segmented instance ratio while specificity measures incorrectly segmented instance ratio.
 
-            \begin{equation}
-                Sensitivity &= \frac{TP}{TP + FN} \\
-            \end{equation}
+                \begin{equation}
+                    Sensitivity &= \frac{TP}{TP + FN} \\
+                \end{equation}
 
-            \begin{equation}
-                Specificity &= \frac{TN}{TN + FP} \\
-            \end{equation}
+                \begin{equation}
+                    Specificity &= \frac{TN}{TN + FP} \\
+                \end{equation}
+
+    \end{itemize}
+
 

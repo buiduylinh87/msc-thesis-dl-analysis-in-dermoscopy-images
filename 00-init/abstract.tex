@@ -18,15 +18,15 @@ Skin lesion detection and classification are current challenges in medical image
 Skin diseases are difficult to recognize because of the similarity between lesions and low contrast between the lesions and the skin.
 Dermatologic image processing benefits from the evaluation scores of neural nets. To help the physicians for the accurate diagnosis,
 the medical field has an increasing interest in this technology, especially in the diagnosis of skin lesions.
-This thesis presents a comparision between various state-of-the-art deep learning frameworks namely
+This thesis presents a comparision between various state-of-the-art deep learning frameworks namely U-Net,
 SegAN and MultiResUNet to solve skin lesion analysis problems using a dermatoscopic image that contains a skin tumor.
-SegAN which is a special type of Generative Adversial Network (GAN) brings a new architecture in machine learning by adding generator and discriminator steps in data analysis.
+SegAN which is a special type of Generative Adversarial Network (GAN) brings a new architecture in machine learning by adding generator and discriminator steps in data analysis.
 MultiResUNet is a U-Net-based neural network architecture which aims to overcome the insufficient data problem in medical imaging field by extracting contexual details even if the dataset is small.
-In this article, SegAN and MultiResUNet architectures have been implemented on two dimensional skin lesion images from the
-International Skin Imaging Collaboration (ISIC) 2017 Challenge. After the preprocessing, colored images have been trained in both SegAN and MultiResUNet.
+In this article, U-Net, SegAN and MultiResUNet architectures have been implemented on two dimensional skin lesion images from the
+International Symposium on Biomedical Imaging (ISBI) 2017 Challenge. After the preprocessing, colored images have been trained in U-Net, SegAN and MultiResUNet.
 The experiment setup has been enriched by adding incremental noise on tumor images before models training.
 The evaluation has been tested through accuracy, sensitivity, specificity, Dice coefficient and Jaccard coefficient parameters.
-In conclusion, test results showed that both SegAN and MultiResUNet architectures provide a robust approach in skin lesion analysis and there is no actual superiority againist each other.}
+In conclusion, test results showed that both SegAN and MultiResUNet architectures provide a robust approach against U-Net which is well known medical image segmentation framework in skin lesion analysis.}
 
 %
 % Abstract in French
@@ -35,23 +35,16 @@ La détection, l'analyse, la classification des tumeurs sont les principaux prob
 Un médecin ou un oncologue intervient dans la prise en charge des patients en consultant des rapports détaillés de carcinome in situ qui analysent la pathologie des lésions suspectes.
 L'apprentissage profond appliqué à plusieurs domaines de la médecine est considéré comme une intervention en oncologie.
 Même si le traitement final de la lésion est décidé par les oncologues ou les chirurgiens en cas de résection,
-l'analyse des lésions (bénignes ou malignes) basée sur l'image promet une prise de décision automatisée pour la radiologie.
+l'analyse d'images des lésions (bénignes ou malignes) promet une prise de décision automatisée en radiologie.
 En raison de la capacité accrue des techniques d'apprentissage automatique à transformer les données d'entrée en présentations de haut niveau,
-les techniques d'apprentissage en profondeur utilisées pour l'analyse d'images sont devenues importantes pour aider les médecins au cours des dernières années.
-La détection et la classification des lésions cutanées sont des défis actuels dans l'analyse d'images médicales.
-Les maladies de la peau sont difficiles à reconnaître en raison de la similitude entre les lésions et du faible contraste entre les lésions et la peau.
-Le traitement d'image dermatologique bénéficie des scores d'évaluation des réseaux neuronaux. Pour aider les médecins à poser un diagnostic précis,
-le domaine médical s'intéresse de plus en plus à cette technologie, notamment au diagnostic des lésions cutanées.
-Cet article présente une comparaison entre diverses approches basées sur l’apprentissage en profondeur
-SegAN et MultiResUNet pour résoudre les problèmes d'analyse des lésions cutanées à l'aide d'une image dermatoscopique contenant une tumeur cutanée.
-Les réseaux adverses gaussiens (SegAN) apportent une nouvelle architecture dans l'apprentissage automatique en ajoutant des étapes de générateur et de discriminateur dans l'analyse des données.
-MultiResUNet est une architecture de réseau neuronal qui vise à surmonter le problème de données insuffisantes dans le domaine de l'imagerie médicale
-en extrayant des détails contextuels même si l'ensemble de données est petit.
-Dans cet article, les architectures SegAN et MultiResUNet ont été implémentées sur des images de lésions cutanées bidimensionnelles
-Défi 2017 de la Collaboration internationale en imagerie cutanée (CITI). Après le prétraitement, des images en couleur ont été formées à la fois dans SegAN et MultiResUNet.
+les techniques d'apprentissage approfondi utilisées pour l'analyse d'images sont devenues importantes pour aider les médecins au cours des dernières années.
+La détection et la classification des lésions cutanées sont des défis actuels dans l'analyse d'images médicales. Les maladies de la peau sont difficiles à reconnaître en raison de la similitude entre les lésions et du faible contraste entre les lésions et la peau. Le traitement d'image dermatologique bénéficie des scores d'évaluation des réseaux neuronaux. Pour aider les médecins à poser un diagnostic précis, le domaine médical s'intéresse de plus en plus à cette technologie, notamment au diagnostic des lésions cutanées. Cette thèse présente une comparaison entre divers cadres d'apprentissage en profondeur de pointe, à savoir U-Net, SegAN et MultiResUNet pour résoudre les problèmes d'analyse des lésions cutanées à l'aide d'une image dermatoscopique contenant une tumeur cutanée. SegAN qui est un type spécial de Réseau Génératif Adversaire (GAN) apporte une nouvelle architecture dans l'apprentissage automatique en ajoutant des étapes de générateur et de discriminateur dans l'analyse des données.
+MultiResUNet est une architecture de réseau neuronal basée sur U-Net qui vise à surmonter le problème de données insuffisantes dans le domaine de l'imagerie médicale en extrayant des détails contextuels même si l'ensemble de données est petit.
+Dans cet article, les architectures U-Net, SegAN et MultiResUNet ont été implémentées sur des images de lésions cutanées bidimensionnelles
+Défi 2017 du Symposium international sur l'imagerie biomédicale (ISBI). Après le prétraitement, des images en couleur ont été formées en U-Net, SegAN et MultiResUNet.
 La configuration de l'expérience a été enrichie par l'ajout de bruit incrémentiel sur les images tumorales avant la formation des modèles.
 L'évaluation a été testée par les paramètres d'exactitude, de sensibilité, de spécificité, de coefficient de dés et de coefficient de Jaccard.
-En conclusion, les résultats des tests ont montré que les architectures SegAN et MultiResUNet fournissent une approche robuste dans l'analyse des lésions cutanées et qu'il n'y a pas de supériorité réelle à nouveau.}
+En conclusion, les résultats des tests ont montré que les architectures SegAN et MultiResUNet fournissent une approche robuste contre U-Net qui est un cadre de segmentation d'image médicale bien connu dans l'analyse des lésions cutanées.}
 % Turkish Abstract
 %
 \oz{Bilgisayar destekli radyoloji, matematik, tıp ve mühendislik arasında disiplinlerarası bir alan haline gelmiştir.
@@ -64,13 +57,12 @@ görüntü analizi için kullanılan derin öğrenme teknikleri, son yıllarda h
 Deri lezyonlarının saptanması ve sınıflandırılması tıbbi görüntü analizinde güncel zorluklardandır.
 Lezyonlar arasındaki benzerlik ve lezyonlar ile cilt arasındaki düşük kontrast nedeniyle cilt hastalıklarını tanımak zordur.
 Dermatolojik görüntü işleme, doktorların doğru tanı koymasına yardımcı olmak için bu teknolojiyle, özellikle cilt lezyonlarının teşhisiyle ilgili olan kısmına yoğun ilgi göstermektedir.
-Bu makale,  Kapsül Ağı, bir generatif adversial ağ (GAN) türevi olan SegAN ve MultiResUNet gibi son teknoloji derin öğrenme yaklaşımlarıyla cilt tümörü içeren dermatoskopik
+Bu makale,  U-Net, bir generatif adversial ağ (GAN) türevi olan SegAN ve MultiResUNet gibi son teknoloji derin öğrenme yaklaşımlarıyla cilt tümörü içeren dermatoskopik
 görüntüleri kullanarak cilt lezyonu analiz problemlerini çözmede yol göstermeyi amaçlayan bir karşılaştırma sunmaktadır.
 SegAN, klasik CNN'lerden farklı olarak derin öğrenme modeline üretici ve ayırıcı adımlar ekleyerek yeni bir mimari sunmuştur.
 MultiResUNet, medikal görüntüleme alanının temel sorunlarından biri olan yetersiz veri problemini
 bağlamsal detayları az veriden başarılı bir şekilde çıkararak aşmayı amaçlayan bir derin sinir ağı mimarisidir.
-Bu makalede, SegAN ve MultiResUNet mimarileri Uluslararası Cilt Görüntüleme İşbirliği (ISIC) 2017 Yarışması'ndan alınan iki boyutlu cilt lezyonu görüntüleri üzerine uygulanmıştır.
+Bu makalede, SegAN ve MultiResUNet mimarileri Uluslararası Biyomedikal Görüntüleme Sempozyumu (ISBI) 2017 Yarışması'ndan alınan iki boyutlu cilt lezyonu görüntüleri üzerine uygulanmıştır.
 Ön işlemeden sonra, renkli görüntüler hem SegAN da hem de MultiResUNet'te eğitilmiştir. Deney düzeneği, model eğitimi öncesinde tümör görüntülerine artımlı gürültü eklenerek zenginleştirilmiştir.
 Değerlendirme; doğruluk, duyarlılık, özgüllük, Dice katsayısı ve Jaccard katsayısı parametreleri ile yapılmıştır.
-Sonuç olarak, test sonuçları hem SegAN hem de MultiResUNet mimarilerinin cilt lezyonu analizinde tutarlı bir yaklaşım sağladığını
-ve farklı gürültü oranlarında birbirlerine karşı gerçek bir üstünlük kuramadıklarını göstermiştir.}
+Sonuç olarak, test sonuçları hem SegAN hem de MultiResUNet mimarilerinin cilt lezyonu analizinde, farklı gürültü oranlarında tutarlı bir yaklaşım sağladığını ve U-Net mimarisine göre daha başarılı olduklarını göstermiştir.}

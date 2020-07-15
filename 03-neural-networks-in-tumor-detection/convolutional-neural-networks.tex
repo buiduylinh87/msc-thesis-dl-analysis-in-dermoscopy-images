@@ -7,7 +7,7 @@
 
     \input{03-neural-networks-in-tumor-detection/figures/cnn-architecture-image-classification}
 
-    A CNN mainly consist of different types of layers as it can be seen in Figure~\ref{fig:sample-cnn-architecture-skin-lesion-classification} including input, convolutional, non-linearity, pooling, and fully connected layers.
+    A CNN mainly consist of different types of layers as it can be seen in Figure~\ref{figure:sample-cnn-architecture-skin-lesion-classification} including input, convolutional, non-linearity, pooling, and fully connected layers.
 
     \begin{itemize}
 
@@ -17,8 +17,6 @@
             Each neuron has a local receptive field which means it is not fully connected, but connected to some section of the input to provide abstractions of small sections of the input data.
             Convolution layers calculate a dot product between the receptive field and the filter by performing convolution.
             The result of this convolution is a single integer which will be used as the input of the next layer.
-
-            \input{03-neural-networks-in-tumor-detection/figures/cnn-convolutional-layer}
 
             The filter is slided over the next receptive fields of the input image repeatedly until there is no unconvolved receptive field left.
 

@@ -1,9 +1,9 @@
-\section{Dataset}\label{sec:dataset}
+\section{Dataset}\label{section:dataset}
 
-The first part of ISBI Challenge 2017 \cite{codella2018skin} - Skin Lesion Analysis Towards Melanoma Detection: Lesion Segmentation dataset is used in this project.
+The first part of ISBI Challenge 2017 \cite{codella2018skin} - Skin Lesion Analysis Towards Melanoma Detection: Lesion Segmentation dataset is used in this thesis.
 This dataset has train, validation and test data separately. The training dataset consist of 2000 dermoscopic .jpg images and the related masks with .png format.
 The dataset include various type of lesions namely malignant melanoma, nevus and seborrhoeic keratosis.
-Sample images is given with corresponding masks in Figure ~\ref{fig:sample-images-from-dataset}.
+Sample images is given with corresponding masks in Figure ~\ref{figure:sample-images-from-dataset}.
 
 \input{04-methodology/figures/sample-images-from-dataset.tex}
 
@@ -14,4 +14,4 @@ The results are based on several common image similarity metrics which are given
 
 The images are of various dimensions and the all used neural networks can't handle relatively big images because of their different internal architectures and memory constraints.
 We also had to resize all images into same dimension to reduce the memory consumption and increase the accuracy as a preprocessing stage.
-As it can be stated at Figure~\ref{fig:data-preparation-process}, arrays of mask files converted to uint8 to reduce the size of the masks.
+As it can be stated at Figure~\ref{figure:data-preparation-process}, arrays of mask files converted to uint8 to reduce the size of the masks.

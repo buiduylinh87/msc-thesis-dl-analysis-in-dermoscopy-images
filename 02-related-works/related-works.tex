@@ -3,7 +3,7 @@
     Publication of AlexNet in 2012 have triggered a paradigm change in image segmentation, and then
     deep learning methods have provided prominent results and became the state-of-the-art in this area in recent years \cite{quang2017automatic}.
     In this section, the studies that propose deep architectures for skin lesion segmentation are discussed.
-    Table~\ref{summary-of-related-skin-lesion-segmentation-surveys} shows the summary of the discussed surveys.
+    Table~\ref{table:summary-of-related-skin-lesion-segmentation-surveys} shows the summary of the discussed surveys.
 
     \citet{long2015fully} proposed an FCN from the CNNs known to be successful in semantic segmentation.
     They adapted well-known classification networks such as AlexNet, VGG, GoogleLeNet to fully convolutional networks.
@@ -46,7 +46,7 @@
 
     \citet{al2018skin} developed a framework for skin lesion segmentation via full resolution convolutional networks (FrCN).
     This method eliminates subsampling layers and learns the full resolution features directly.
-    It is tested with ISBI 2017 challenge and PH2 datasets and has achieved better results againist the well-known state-of-the-art segmentation networks such as U-Net, SegNet and FCN.
+    It is tested with ISBI 2017 challenge and PH2 datasets and has achieved better results against the well-known state-of-the-art segmentation networks such as U-Net, SegNet and FCN.
 
     \citet{li2018dense} introduced a new dense deconvolutional network (DDN) for skin lesion segmentation.
     The proposed network is based on residual learning and consist of three main parts namely dense convolutional layer, hierarchical supervision (HS), and chained residual pooling (CRP).
@@ -54,15 +54,15 @@
     CRP helps to capture contextual background features while HS is responsible for improving the prediction mask.
     They tested the network with the ISBI 2017 dataset and it achieved 86.6\% Dice coefficient indices.
 
-    \citet{xue2018adversarial} proposed an Adversial Neural Network (GAN), called SeGAN, based deep neural network aimed to increase accuracy of medical image segmentation.
+    \citet{xue2018adversarial} proposed an Adversarial Neural Network (GAN), called SeGAN, based deep neural network aimed to increase accuracy of medical image segmentation.
     Classical GANs are not as good as expected in providing gradient feedback to the network, because their output is single which may not represent pixel level details of images.
     Segmentation label maps are created with the help of newly created FCN based segmentor network with a new activation function.
     Another significant improvement in the proposed network is multi-scale L1 loss function aimed to extract both local and global features which represent the relations between pixels.
 
-    \citet{peng2019segmentation} introduced a new adversial network based segmentation architecture consisting of a CNN based discrimination and a U-Net based segmentation networks.
-    This utilized generative adversial network is evaluated on the ISBI 2016 challenge dataset and achieved 97.0\% Accuracy rate.
+    \citet{peng2019segmentation} introduced a new adversarial network based segmentation architecture consisting of a CNN based discrimination and a U-Net based segmentation networks.
+    This utilized generative adversarial network is evaluated on the ISBI 2016 challenge dataset and achieved 97.0\% Accuracy rate.
 
-    \citet{tu2019segmentation} proposed an adversial network based deep learning framework focused on solving the imbalanced lesion-background problem.
+    \citet{tu2019segmentation} proposed an adversarial network based deep learning framework focused on solving the imbalanced lesion-background problem.
     The segmentation block of the proposed network is an encoder-decoder network with Dense-Residual block. Deep supervision is utilized with a multi-scale loss function.
     The network is evaluated on the ISBI 2017 challenge dataset and gained better segmentation results than the other state-of-the-art methods participating in that challenge.
 

@@ -1,13 +1,13 @@
 \section{Experiments}
 
     Our study is composed of three steps; preprocessing, implementations of networks, and evaluation.
-    During the preprocessing, image normalization procedures have been applied to data explained in Section~\ref{sec:dataset};
+    During the preprocessing, image normalization procedures have been applied to data explained in Section~\ref{section:dataset};
     the image resizing and the conversion of file formats.
     Moreover, data size has been augmented by creating additional images files in different noise levels.
     Because our main focus is comparing the proposed network under the same conditions,
-    the preprocessing stages were kept the same for a fair comparison of both MultiResUNet and SegAN.
+    the preprocessing stages were kept the same for a fair comparison of U-Net, MultiResUNet and SegAN.
 
-    Hyperparameters of training proses are explained below while the compared networks are explained in details in Section~\ref{sec:networks}.
+    Hyperparameters of training proses are explained below while the compared networks are explained in details in Section~\ref{section:networks}.
 
     \begin{itemize}
 
@@ -26,7 +26,7 @@
 
     \end{itemize}
 
-    We trained the MultiResUnet for $200$ epochs with a batch size of $8$ and binary cross entropy loss function.
+    We trained the U-Net and MultiResUnet for $200$ epochs with a batch size of $8$ and binary cross entropy loss function.
     Because we noticed that model success did not improve after that, we select \emph{200} as the number of epochs.
     Adam is used as optimizer with the default parameters stated in the original paper.
 
@@ -34,23 +34,23 @@
     which starts from $2.0 x 10^{-4}$ and multiplies by a decay rate of $0.5$ every $25$ epochs.
     Several learning and decay rates have been tried but the mentioned ones in the original paper gave the best results.
 
-    We used early stopping for the both networks.
-    If the performances of models stop improving after a certain number of epochs, $30$ is selected for this project, we have stopped the training.
+    We used early stopping for the all networks.
+    If the performances of models stop improving after a certain number of epochs, $30$ is selected for this thesis, we have stopped the training.
 
     We have increased the number of experiments by giving additive noise into initial dataset.
     Five different noise levels except to noise free have been tested using Gaussian noise given as it follows through the
     initial image $I_i$;
 
     \begin{equation}
-        I_{final} = I_i + I_n \label{noisy_common}
+        I_{final} = I_i + I_n \label{equation:noisy_common}
     \end{equation}
 
-    $I_{final}$ and $I_{n}$ in Equation \eqref{noisy_common} are the noisy image and Gaussian noise, respectively.
+    $I_{final}$ and $I_{n}$ in Equation \eqref{equation:noisy_common} are the noisy image and Gaussian noise, respectively.
 
-    The Gaussian noise is defined in the Equation  \eqref{noise_gaussian}.
+    The Gaussian noise is defined in the Equation  \eqref{equation:noise_gaussian}.
 
     \begin{equation}
-        p_G(z) = \frac{1}{\sigma\sqrt{2\pi}} e^{ -\frac{(z-\mu)^2}{2\sigma^2} }  \label{noise_gaussian}
+        p_G(z) = \frac{1}{\sigma\sqrt{2\pi}} e^{ -\frac{(z-\mu)^2}{2\sigma^2} }  \label{equation:noise_gaussian}
     \end{equation}
 
     $p_G(z)$ denotes the noise distribution in single channel image.

@@ -16,9 +16,9 @@ pdflatex -shell-escape -interaction nonstopmode -file-line-error thesis | grep "
 pdflatex -shell-escape -interaction nonstopmode -file-line-error thesis | grep ".*:[0-9]*:.*"
 
 # rename thesis
-thesisFileName="thesis-$VERSION.pdf"
-thesisFileNameDev="thesis-latest-dev.pdf"
-pathToReportLatest="./pdf-previous-versions/$thesisFileName"
+thesisFileName="thesis-report-$VERSION.pdf"
+thesisFileNameDev="thesis-report-latest-dev.pdf"
+pathToReportLatest="./outputs/$thesisFileName"
 pathToReportInProgress="./$thesisFileNameDev"
 
 cp -f thesis.pdf "$pathToReportLatest"

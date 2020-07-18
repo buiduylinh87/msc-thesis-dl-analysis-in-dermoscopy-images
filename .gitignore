@@ -23,4 +23,4 @@
 *.toc
 .idea
 !*/figures/*.pdf
-!pdf-previous-versions/*.pdf
+!outputs/*.pdf

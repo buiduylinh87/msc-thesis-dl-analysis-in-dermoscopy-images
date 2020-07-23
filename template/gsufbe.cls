@@ -283,7 +283,7 @@ requirements for the degree of {\bf \@degree~ in \@department~ Department, Galat
 
 \def\thepart {\Roman{part}}
 \if@rmnchp \def\thechapter{\Roman{chapter}}
-  \else \def\thechapter{\vspace*{10pt} \arabic{chapter}} \fi
+  \else \def\thechapter{ \arabic{chapter}} \fi
 \def\thesection {\thechapter.\arabic{section}}
 \def\thesubsection {\thesection.\arabic{subsection}}
 \def\thesubsubsection {\thesubsection .\arabic{subsubsection}}

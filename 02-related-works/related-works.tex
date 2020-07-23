@@ -23,7 +23,7 @@
     solving common dermoscopic image problems such as imbalanced skin and lesion pixels, the existence of various artifacts, and irregular lesion borders.
     The proposed network achieved better results than the other state-of-the-art networks in ISBI 2016 challenge and PH2 databases.
 
-    \citet{yuan2017automatic2} presented a new skin lesion segmentation framework base on Fully Convolutional-Deconvolutional Neural Networks (CDNN).
+    \citet{yuan2017automatic2} presented a new skin lesion segmentation framework base on Fully Convolutional Deconvolutional Neural Networks (CDNN).
     Their main focus is to improve network architecture rather than pre and post processings.
     Rectified Linear Unit (ReLU) is used as the activation of each layer in the network except to output layer.
     Internal covariate shift is reduced by adding batch normalization to the output of CD layers.
@@ -36,7 +36,6 @@
     In this network, first stage FCN focused on learning localization information and coarse appearance,
     whereas second stage FCN focused on subtle characteristics of the lesion boundaries.
     A parallel integration method is also introduced to combine the results of the first and second stage FCNs.
-
     \citet{yu2018melanoma} presented a novel deep neural network architecture  consisting of two stages called segmentation and classification.
     The network combines a deep learning method with a local descriptor encoding strategy for dermoscopy image recognition.
     A pretrained large image dataset is used to extract deep representations of a rescaled image.
@@ -45,11 +44,11 @@
     The proposed network is a fully convolutional residual network (FCRN) and took second place in the segmentation category of the ISBI 2016 challenge.
 
     \citet{al2018skin} developed a framework for skin lesion segmentation via full resolution convolutional networks (FrCN).
-    This method eliminates subsampling layers and learns the full resolution features directly.
+    This method eliminated subsampling layers and learned the full resolution features directly.
     It is tested with ISBI 2017 challenge and PH2 datasets and has achieved better results against the well-known state-of-the-art segmentation networks such as U-Net, SegNet and FCN.
 
     \citet{li2018dense} introduced a new dense deconvolutional network (DDN) for skin lesion segmentation.
-    The proposed network is based on residual learning and consist of three main parts namely dense convolutional layer, hierarchical supervision (HS), and chained residual pooling (CRP).
+    The proposed network is based on residual learning. It consist of three main parts namely dense convolutional layer, hierarchical supervision (HS), and chained residual pooling (CRP).
     Dimensions of the input and output images remain unchanged in DDLs.
     CRP helps to capture contextual background features while HS is responsible for improving the prediction mask.
     They tested the network with the ISBI 2017 dataset and it achieved 86.6\% Dice coefficient indices.
@@ -70,33 +69,33 @@
     The evaluation results showed that using pretrained weights improved the segmentation score on the ISBI 2017 challenge dataset.
 
     \citet{ninh2019skin} proposed a SegNet architecure based FCN framework
-    which aims to decrease the number of upsampling and downsampling layers of classical SegNet architecture to reduce the learned parameters.
+    which aimed to decrease the number of upsampling and downsampling layers of classical SegNet architecture to reduce the learned parameters.
     The proposed network is evaluated on the ISBI 2017 challenge dataset and gained sufficient results in terms of Jaccard Index and Dice coefficient.
 
     \citet{mirikharaji2019learning} proposed a deep CNN framework focused on segmenting skin lesions.
-    The main focus of the proposed network is the use of two different annotation set consisting of reliable and unreliable annotations.
-    The reliable annotations are marked by experts and have more effect on segmentation result. This reweighting is done by a newly deployed meta-learning approach.
+    The main focus of the proposed network was the use of two different annotation set consisting of reliable and unreliable annotations.
+    The reliable annotations are marked by experts and showed reliable segmentation results. This reweighting is done by a newly deployed meta-learning approach.
     The proposed network shows that using different levels of annotation noise on weighting affects the segmentation results and model robustness positively.
 
     \citet{sarker2019mobilegan} proposed a lightweight GAN framework, called MobileGAN, aiming to reduce the number of training parameters while keeping the segmentation accuracy high.
     They combined the channel attention module with the 1D non-bottleneck factorization networks for the generator part of the GAN.
-    MobileGAN is trained with ISIC 2018 training dataset and evaluated with ISBI 2017 challenge dataset.
-    Compared to state-of-the-art models such as FCN, U-Net, or SegNet, the results show that the proposed network has fewer parameters, about 2.3 million, and achieved considerable scores.
+    MobileGAN is trained with ISIC 2018 training dataset and was evaluated with ISBI 2017 challenge dataset.
+    Compared to state-of-the-art models such as FCN, U-Net, or SegNet, the results showed that the proposed network had fewer parameters, about 2.3 million, and achieved considerable scores.
 
-    \citet{lei2020skin} proposed a GAN framework aiming to increase skin lesion segmentation accuracy and win the first part of ISBI 2017 challenge.
-    The segmentation part of the proposed GAN is construct with a skip connection and dense convolution U-Net while the discrimination part is consist of a dual discriminator module.
-    One of the discriminators is responsible for increasing the detection of boundaries while the other one is responsible for learning the contextual informations.
+    \citet{lei2020skin} proposed a GAN framework aiming to increase skin lesion segmentation accuracy and won the first part of ISBI 2017 challenge.
+    The segmentation part of the proposed GAN was construct with a skip connection and dense convolution U-Net while the discrimination part was consist of a dual discriminator module.
+    One of the discriminators was responsible for increasing the detection of boundaries while the other one was responsible for learning the contextual informations.
 
     \citet{zafar2020skin} proposed an automated neural network architecture aimed to segment skin lesion accurately.
     Res-Unet, the proposed network, is a combination of two well-known neural networks in image segmentation namely U-Net and ResNet.
     The other major improvement in this network is using image inpainting for hair removal.
-    It is evaluated on the ISBI 2017 challenge and PH2 datasets and gained Jaccard Index of 77.2\% and 85.4\%  respectively.
+    It was evaluated on the ISBI 2017 challenge and PH2 datasets and gained Jaccard Index of 77.2\% and 85.4\%  respectively.
 
-    \citet{xie2020mutual} introduced a CNN variant, called MB-DCNN, which consist of three sub CNNs namely coarse segmentation network,
+    \citet{xie2020mutual} introduced a CNN variant, called MB-DCNN, which consisted of three sub CNNs namely coarse segmentation network,
     mask guided segmentation network, and enhanced segmentation network respectively.
-    The first network is responsible for creating coarse masks which is used on the next network to classify the lesions.
-    The third network is a segmentation network fedded from the second classification network.
-    There are learning transfer between networks to increase the segmentation accuracy.
-    MB-DCNN is tested with the ISBI 2017challenge and PH2 datasets and it achieved Jaccard index of 80.4\% and 89.4\%.
+    The first network was responsible for creating coarse masks which had been used on the next network to classify the lesions.
+    The third network was a segmentation network fedded from the second classification network.
+    There were learning transfer between networks to increase the segmentation accuracy.
+    MB-DCNN was tested with the ISBI 2017challenge and PH2 datasets and it achieved Jaccard index of 80.4\% and 89.4\%.
 
     \input{02-related-works/tables/summary-of-related-skin-lesion-segmentation-surveys}

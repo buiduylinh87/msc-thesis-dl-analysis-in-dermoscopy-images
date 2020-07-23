@@ -26,18 +26,18 @@
 
     \end{itemize}
 
-    We trained the U-Net and MultiResUnet for $200$ epochs with a batch size of $8$ and binary cross entropy loss function.
-    Because we noticed that model success did not improve after that, we select \emph{200} as the number of epochs.
-    Adam is used as optimizer with the default parameters stated in the original paper.
+    U-Net and MultiResUnet have been trained for $200$ epochs with a batch size of $8$ and
+    binary cross entropy loss function. As the performance did not increase epoch size has been kept as $200$.
+    Adam optimizer has been used as optimizer with the default parameters stated in the original paper.
 
-    We trained the SegAN for $200$ epochs with a batch size of $200$ and an adaptive learning rate for Adam optimizer
-    which starts from $2.0 x 10^{-4}$ and multiplies by a decay rate of $0.5$ every $25$ epochs.
-    Several learning and decay rates have been tried but the mentioned ones in the original paper gave the best results.
+    Furthermore SegAN has been trained for $200$ epochs with a batch size of $200$ and an adaptive learning
+    rate for Adam optimizer which started from $2.0 x 10^{-4}$ and multiplied by a decay rate of
+    $0.5$ every $25$ epochs. Several learning and decay rates have been tried but the given parameters were found optimal like the original article.
 
-    We used early stopping for the all networks.
-    If the performances of models stop improving after a certain number of epochs, $30$ is selected for this thesis, we have stopped the training.
+    Early stopping has been used for the all networks.
+    If the performances of models stoped improving after a certain number of epochs, $30$ was set to stop the training.
 
-    We have increased the number of experiments by giving additive noise into initial dataset.
+    The experiments have been designed by giving additive noise into initial dataset.
     Five different noise levels except to noise free have been tested using Gaussian noise given as it follows through the
     initial image $I_i$;
 

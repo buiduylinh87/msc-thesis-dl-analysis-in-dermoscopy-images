@@ -6,12 +6,12 @@
     ANNs are a category of supervised machine learning algorithms whose design has been inspired by the neurophysiological workings of the human brain \cite{hill1994artificial}.
     These networks consist of several layers mainly first layer, last layer and middle layer(s).
     The first layer is known as the input layer, middle layer which is called as hidden layer and the last layer is the output layer where each layer has several artificial neurons.
-    An example of ANN with a single hidden layer can be seen at Figure~\ref{figure:simple-ann}.
+    A sample ANN  model is given with two inputs, one hidden layer, and output layer with two neurons \cite{babu2000adaptive} in Figure~\ref{figure:simple-ann}.
     The most common layer organization is the fully connected layer, where each neuron is fully paired with adjacent neurons.
 
-    An ANN transform the inputs into outputs using the activation function, bias and weights.
-    To explain, the sum of inputs is multiplied by weights; the deviation is added and the result is passed through the activation function which is selected by purpose.
-    Deciding whether the neuron is active is determined by the activation function.
+    An ANN transforms the inputs into outputs using the activation function, bias and weights.
+    The sum of inputs is multiplied by weights; the deviation is added and the result is passed through the activation function.
+    The neurons are activated by the activation function.
 
     \input{03-neural-networks-in-tumor-detection/figures/simple-ann}
 
@@ -35,7 +35,7 @@
     \subsection{Activation Functions}
 
         An activation function is used to decide whether an artificial neuron should be activated by calculating the weighted sum of its input.
-        To explain, it basically decides whether the information that the neurons receive is relevant, and ignores it if not.
+        It decides whether the information that the neurons receive is relevant, and ignores it if not.
         The activation functions can be basically divided into 2 groups as linear and non-linear activation functions.
         Because linear functions have constant derivatives, there is no relation between the derivative of the linear function and the input value of x.
         Therefore, the output of functions will not be limited across any range.
@@ -54,7 +54,7 @@
                     It means that small changes in the X values will cause larger changes in the Y values in this range.
                     So the purpose of this function is to try to keep the Y values to the extremes.
                     This is helpful when classifying the values into a particular class.
-                    If they are compared to linear functions, the outputs are always stay in a fixed range (0,1) unlike the linear functions whose outputs can be in the range of infinity.
+                    If they are compared to linear functions, the outputs stay always  in a fixed range [0,1] unlike the linear functions whose outputs can be in the range of infinity.
                     It is clearly understood that the Sigmoid function produces positive values for all the points and it is not symmetric around the origin.
 
                     \begin{equation}
@@ -84,11 +84,12 @@
                           f(x) = x^+ = \max(0, x) \label{equation:relu} \\
                     \end{equation}
 
-                    The non-linearity makes backpropagate the errors and have multiple layers of neurons being activated by ReLU function easy.
-                    ReLU does not activate the all neurons at once
-                    As it can be seen in Equation \eqref{equation:relu}, the neuron does not activated if the input is not positive.
+                    The non-linearity makes backpropagation of the errors and have multiple layers of neurons being activated by ReLU function easy.
+                    ReLU does not activate all neurons at once.
+                    As it can be seen in Equation \eqref{equation:relu}, the neuron is not activated if the input is not positive.
                     This may cause the dead neurons problem which is the main problem of ReLU.
-                    In this activation function, only a few neurons are activated at a time. This makes the network sparse means efficient and easy for computation.
+                    In this activation function, only a few neurons are activated at a time.
+                    This makes the network sparse which increases the efficiency in computation.
 
             \item \textbf{Leaky ReLU} function is an improved version of the ReLU function.
                     The gradient which is \emph{0} for \emph{x < 0} in ReLU make the neurons die for activations in that region.
@@ -111,16 +112,16 @@
                         \end{cases}
                     \end{equation}
 
-                    In this context, \emph{a} is a trainable parameter which its values is learnt the network for faster and more optimum convergence.
+                    In this context, \emph{a} is a trainable parameter which its values are learnt for a fast network to get an optimum convergence.
                     PReLU is preferred when Leaky ReLU fails to passing the relevant information to the next layer with solving the dead neurons problem.
 
         \end{itemize}
 
     \subsection{Loss Functions}
 
-        Loss function which is also called cost function evaluates the penalty between the ground truth label and the prediction during the training process to detect how well neural network models the dataset.
+        Loss function which is also called cost function evaluates the penalty between the ground truth label and the prediction during the training process to detect how well neural network models are for the dataset.
         The output of the loss function is inversely proportional to the success of the model, meanly higher numbers in the output are the sign of the unsuccessful model.
-        Loss function is used the error which is calculated during backpropagation to update the weights in the negative direction of its derivative.
+        Loss function used the error which is calculated during backpropagation to update the weights in the negative direction of its derivative.
 
         In this section, some of the commonly used loss functions for image segmentation such as weighted cross entropy, balanced cross entropy, and Dice loss are examined.
 

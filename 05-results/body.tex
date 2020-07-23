@@ -4,12 +4,12 @@
     but vanilla U-Net did not achieved similar results in terms of the same similarity metrics. It's not as successful as the others.
     MultiResUNet is slightly more successful than SegAN if they compared with Jaccard coefficient.
     The detailed results are given in the Table ~\ref{table:all-metrics-all-noises-unet}, ~\ref{table:all-metrics-all-noises-segan} and ~\ref{table:all-metrics-all-noises-multiresunet} through statistical metrics.
-    As can be seen from these tables, although the dice results of MultiResUNet and SegAN are very close for the noiseless datasets, the dice results differ for the all models as the noise level increases.
+    Although the dice results of MultiResUNet and SegAN are very close for the noiseless datasets, the dice results differ for the all models as the noise level increases.
 
-    The both MultiResUnet and SegAN achieved their best results in about epoch of 50. The results are almost the same after that point.
-    Figure ~\ref{figure:all-noises-by-epoch-dice-unet}, ~\ref{figure:all-noises-by-epoch-dice-multiresunet} and ~\ref{figure:all-noises-by-epoch-dice-segan} are point out the dice results of models at different epochs.
-    Figure ~\ref{figure:segan-avg-dice}, ~\ref{figure:segan-bad-dice} and ~\ref{figure:segan-good-dice} shows the evaluation results of some images from the evaluation dataset with different success rates
-    while Figure ~\ref{figure:multiresunet-avg-dice}, ~\ref{figure:multiresunet-bad-dice} and ~\ref{figure:multiresunet-good-dice} shows the results of MultiResUNet with different success rates.
+    Both MultiResUnet and SegAN achieved their best results around the epoch size of 50. The results were found similar after this point.
+    Figure ~\ref{figure:all-noises-by-epoch-dice-unet}, ~\ref{figure:all-noises-by-epoch-dice-multiresunet} and ~\ref{figure:all-noises-by-epoch-dice-segan} point out the dice results of models at different levels of epoch size.
+    Figure ~\ref{figure:segan-avg-dice}, ~\ref{figure:segan-bad-dice} and ~\ref{figure:segan-good-dice} show the evaluation results of dermoscopic images from the evaluation dataset with different success rates.
+    Furthermore, Figure ~\ref{figure:multiresunet-avg-dice}, ~\ref{figure:multiresunet-bad-dice} and ~\ref{figure:multiresunet-good-dice} show the results of MultiResUNet with different success rates.
 
     \sidebyside
         {05-results/figures/segan/avg/ISIC_0012330.jpg}{Original image}

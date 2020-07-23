@@ -1,14 +1,18 @@
 \chapter{Discussion}
 
-    The architectures used in this thesis are those that have proven their worth in their fields.
-    We aimed to examine both their success to Gaussian noise and their superiority against each other by comparing them with different Gaussian noise levels.
+    In this thesis, different neural network models have been studied by using Gaussian noise models through skin lesion dataset.
+    The performance analysis showed the success ratio for U-Net, MultiResUNet and SegAN models.
+
+    Even if the performance of SegAN architecture was below MultiResUnet for noise free images,
+    the segmentation through gradual noise showed that SegAN could derive better evaluation scores.
+    The architectures used in this thesis have been observed to examine both the evaluation metrics and the reaction against the gradual noise.
     In the MultiResUNet architecture, the most significant improvement compared to U-Net was the multi-scale loss function.
-    We compared MultiResUNet and SegAN results with U-Net to be able to see how well the models behave by well-known comparision point.
+    MultiResUNet and SegAN results have been compared with respect to the initial model U-Net to be able to see their behaviours.
     On the other hand, all models can be subjected to more detailed pre and post processing steps.
     It can be understood whether the models are successful only in medical images by testing all of them with different datasets.
+    Because it is not our main purpose to extend the models success, all inner process has been set via the initial configurations of models.
+    In this context, adding different noises to relevant points in networks such as
+    activation functions, loss functions, weights or hidden layers can be sensible to see the results of these kind of circumstances.
 
-    Because it is not our main purpose to improve the model success, we did not update the inner configurations of models.
-    In this context, adding different noises to relevant points in networks such as activation functions,
-    loss functions, weights or hidden layers can be sensible to see the results of these kind of circumstances.
-
-    Instead of choosing FCN as the segmentor network of SegAN architecture, we can replace it with MultiResUNet to see how powerful a new combined model is.
+    Instead of choosing FCN as the segmentor network of SegAN architecture,
+    MultiResUNet could be implemented within SegAN to extend the model and to derive an hybrid performance.

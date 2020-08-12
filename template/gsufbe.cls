@@ -879,7 +879,7 @@ to\hsize{\hfil\box\@tempboxa\hfil}
 \if@twocolumn
     \@restonecoltrue\onecolumn
 \fi
-\chapter*{\vskip 0.3cm \begin{flushleft} BIOGRAPHICAL SKETCH \end{flushleft}} \@mkboth{BIOGRAPHICAL SKETCH}{BIOGRAPHICAL SKETCH}
+\chapter*{\thispagestyle{empty} \vskip 0.3cm \begin{flushleft} BIOGRAPHICAL SKETCH \end{flushleft}} \@mkboth{BIOGRAPHICAL SKETCH}{BIOGRAPHICAL SKETCH}
 \addcontentsline{toc}{leads}{\protect\numberline\MakeUppercase{{}BIOGRAPHICAL SKETCH}}
 }{
 \if@restonecol
